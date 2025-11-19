@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --card-w: 450px;
+      --card-h: 500px;
+      --duration: 150ms;
+      --easing: cubic-bezier(.34, .61, .55, 1);
+    }
+
+    body {
+      background: linear-gradient(180deg, 
+        #1e3a8a 0%, 
+        #3b82f6 25%, 
+        #60a5fa 50%, 
+        #93c5fd 75%, 
+        #dbeafe 100%);
+      background-attachment: fixed;
+      padding-top: 150px;
+      margin: 0;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    
+    .about-header {
+      position: absolute;
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      padding: 25px 80px;
+      border-radius: 50px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+    }
+
+    .about-header h1 {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: black;
+      text-align: center;
+    }
+
+    .tag-line {
+      width: 100%;
+      background: transparent;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 50px;
+    }
+
+    .line1,
+    .line2 {
+      background: transparent;
+      display: inline-block;
+      font-size: 4rem;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: white;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .line1:hover,
+    .line2:hover,
+    .line3:hover {
+      transform: scale(1.1);
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(59, 130, 246, 0.6);
+    }
+
+    .line3 {
+      background: transparent;
+      margin-top: 20px;
+      font-size: 35px;
+      font-family: 'Quicksand', sans-serif;
+      color: white;
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .vid {
+      background-color: white;
+      margin: 50px auto 0 auto;
+      width: 1050px;
+      max-width: 90%;
+      height: 600px;
+      border-radius: 50px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .video-wrapper {
+      width: 90%;
+      height: 405px;
+      overflow: hidden;
+      border-radius: 40px;
+      margin-top: 40px;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .motto {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 50px;
+      margin-top: 45px;
+    }
+
+    .motto-text {
+      background: transparent;
+      display: inline-block;
+      font-size: 2rem;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: rgb(30, 58, 138);
+      line-height: 1;
+      padding: 0;
+      margin: 0;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      pointer-events: auto;
+    }
+
+    .motto-text:hover {
+      transform: scale(1.05);
+      text-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    }
+
+
+    .content-section {
+      margin: 80px auto;
+      max-width: 1200px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .text-area {
+      background: white;
+      padding: 40px 50px;
+      border-radius: 50px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .text-area:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-area h2 {
+      font-family: 'Quicksand', sans-serif;
+      font-size: 2.5rem;
+      color: #1e3a8a;
+      margin: 0 0 20px 0;
+      font-weight: 700;
+    }
+
+    .text-area p {
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-size: 1.2rem;
+      color: #334155;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .site-footer {
+      position: relative;
+      z-index: 50;
+      padding: 36px 6vw 48px;
+      font-family: 'Quicksand', sans-serif;
+      margin-top: 100px;
+    }
+
+    .newsletter-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0 34px;
+    }
+
+    .quiz-card {
+      width: 100%;
+      max-width: 1200px;
+      background: transparent;
+      padding: 0;
+    }
+
+    .quiz-header {
+      background: white;
+      padding: 40px 60px;
+      border-radius: 50px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+    }
+
+    .quiz-header h2 {
+      margin: 0 0 12px 0;
+      font-size: 52px;
+      font-weight: 700;
+      color: #1e3a8a;
+      text-align: center;
+    }
+
+    .quiz-header p {
+      margin: 0;
+      font-size: 18px;
+      color: #334155;
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .quiz-questions {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .question {
+      background: white;
+      padding: 35px 40px;
+      border-radius: 50px;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .question:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    .question-text {
+      margin: 0 0 25px 0;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1e3a8a;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .options {
+      display: flex;
+      gap: 20px;
+    }
+
+    .option {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 20px 25px;
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+      border: 3px solid #3b82f6;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .option:hover {
+      background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+      border-color: #1e3a8a;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+    }
+
+    .option:hover span {
+      color: white;
+    }
+
+    .option input[type="radio"] {
+      cursor: pointer;
+      width: 22px;
+      height: 22px;
+      accent-color: #1e3a8a;
+    }
+
+    .option span {
+      font-size: 18px;
+      color: #1e3a8a;
+      font-weight: 600;
+      font-family: 'Quicksand', sans-serif;
+      transition: color 0.3s ease;
+    }
+
+    .submit-quiz {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      display: block;
+      padding: 22px 40px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+      transition: all 0.3s ease;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .submit-quiz:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 45px rgba(59, 130, 246, 0.5);
+      background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+    }
+
+    
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+      background: white;
+      padding: 50px 60px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 500px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .modal-content h2 {
+      margin: 0 0 20px 0;
+      font-size: 36px;
+      font-weight: 700;
+      color: #1e3a8a;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .score-display {
+      background: linear-gradient(135deg, #3b82f6, #1e3a8a);
+      padding: 30px;
+      border-radius: 16px;
+      margin-bottom: 20px;
+    }
+
+    .score-display span {
+      font-size: 48px;
+      font-weight: 700;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .modal-content p {
+      font-size: 20px;
+      color: #334155;
+      margin: 0 0 30px 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .close-modal {
+      padding: 14px 40px;
+      border-radius: 24px;
+      border: none;
+      cursor: pointer;
+      background: #3b82f6;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(59, 130, 246, 0.3);
+      transition: all 0.25s ease;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .close-modal:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(59, 130, 246, 0.4);
+      background: #1e3a8a;
+    }
+
+    .footer-slab {
+      background: #FFFFFF;
+      max-width: 1200px;
+      margin: 25px auto 0 auto;
+      padding: 36px;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-name {
+      font-size: 17px;
+      color: #3B3242;
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .quiz-card {
+        padding: 0;
+      }
+
+      .quiz-header {
+        padding: 35px 40px;
+      }
+
+      .question {
+        padding: 30px 35px;
+      }
+
+      .options {
+        flex-direction: column;
+      }
+
+      .text-area {
+        padding: 30px 35px;
+      }
+
+      .text-area h2 {
+        font-size: 2rem;
+      }
+
+      .text-area p {
+        font-size: 1rem;
+      }
+
+      .modal-content {
+        margin: 20px;
+        padding: 40px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-top: 120px;
+      }
+
+      .about-header {
+        top: 20px;
+        padding: 20px 50px;
+      }
+
+      .about-header h1 {
+        font-size: 36px;
+      }
+
+      .line1, .line2 {
+        font-size: 3rem;
+      }
+
+      .line3 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .quiz-header {
+        padding: 30px 25px;
+      }
+
+      .quiz-header h2 {
+        font-size: 32px;
+      }
+
+      .quiz-header p {
+        font-size: 16px;
+      }
+
+      .question {
+        padding: 25px 20px;
+      }
+
+      .question-text {
+        font-size: 18px;
+      }
+
+      .option {
+        padding: 16px 20px;
+      }
+
+      .option span {
+        font-size: 16px;
+      }
+
+      .submit-quiz {
+        font-size: 18px;
+        padding: 18px 30px;
+      }
+
+      .about-header {
+        padding: 18px 40px;
+      }
+
+      .about-header h1 {
+        font-size: 28px;
+      }
+
+      .modal-content h2 {
+        font-size: 28px;
+      }
+
+      .score-display span {
+        font-size: 36px;
+      }
+    }
+  </style>
+  <title>About - earthWise</title>
+</head>
+
+<body>
+
+  <div class="about-header">
+    <h1>ABOUT</h1>
+  </div>
+
+  <div class="tag-line">
+    <span class="line1">CONNECT. SHOP. SUSTAIN.</span>
+    <span class="line2">A TRUE UPGRADE</span>
+    <span class="line3">Better Choices, Not More Stuff</span>
+  </div>
+
+<div class="vid">
+    <div class="video-wrapper">
+      <video src="aboutvideo.mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <div class="motto">
+      <span class="motto-text">"Making Ethical Living the New Effortless Default"</span>
+    </div>
+  </div>
+
+  <div class="content-section">
+    <div class="text-area">
+      <h2>What is EarthWise</h2>
+      <p>
+        We are your trusted guide, not a store. EarthWise is the central hub where the confusion of ethical shopping ends. We do the meticulous, time-consuming research and verification so you don't have to. Our mission is to vet, verify, and curate the best sustainable and ethical brands from across the web, bringing them together in one convenient, confidence-inspiring directory.
+      </p>
+    </div>
+
+    <div class="text-area">
+      <h2>The EarthWise Standard</h2>
+      <p>
+        Every partner we feature is vetted against strict criteria focused on three critical pillars: Environmental Impact (sustainable materials, carbon footprint reduction, waste reduction initiatives), Fair Labor & Ethics (safe working conditions, fair wages, supply chain transparency), and Product Quality & Durability (products built to last, fighting the "buy and throw away" cycle).
+      </p>
+    </div>
+
+    <div class="text-area">
+      <h2>The Brands We Promote</h2>
+      <p>
+        We curate brands across essential lifestyle categories: Nourish (organic, fair-trade, zero-waste food that's non-toxic and nutrient-dense), Style (Slow Fashion from sustainable materials made by fairly paid workers), and Home (furniture and decor from reclaimed, recycled, or responsibly sourced materials that create non-toxic, beautiful living spaces).
+      </p>
+    </div>
+
+    <div class="text-area">
+      <h2>Why Choose EarthWise</h2>
+      <p>
+        Save time and gain confidence with every purchase—no more "greenwashing" guesswork. Shop knowing every brand meets our ethical criteria. Discover innovative brands you might never find otherwise. Your purchases actively reduce waste, support UN SDG 12 (Responsible Consumption & Production), and promote fair wages and ethical supply chains. Peace of mind is the new luxury—90% of our users feel more positive about their purchases!
+      </p>
+    </div>
+  </div>
+
+  <div class="site-footer">
+    <div class="newsletter-wrap">
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <h2>Test Your Sustainability Knowledge</h2>
+          <p>Answer these 4 questions to discover how eco-aware you are!</p>
+        </div>
+
+        <div class="quiz-questions">
+          <div class="question">
+            <p class="question-text">1. Which material has the lowest carbon footprint?</p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="q1" value="correct">
+                <span>Bamboo</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q1" value="wrong">
+                <span>Plastic</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="question">
+            <p class="question-text">2. What percentage of plastic ever made has been recycled?</p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="q2" value="wrong">
+                <span>50%</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q2" value="correct">
+                <span>Less than 10%</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="question">
+            <p class="question-text">3. Which shopping choice is more sustainable?</p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="q3" value="correct">
+                <span>Buying second-hand</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q3" value="wrong">
+                <span>Buying new "eco-friendly"</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="question">
+            <p class="question-text">4. The fashion industry produces what % of global carbon emissions?</p>
+            <div class="options">
+              <label class="option">
+                <input type="radio" name="q4" value="wrong">
+                <span>2%</span>
+              </label>
+              <label class="option">
+                <input type="radio" name="q4" value="correct">
+                <span>10%</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button class="submit-quiz" onclick="submitQuiz()">Submit Quiz</button>
+      </div>
+    </div>
+
+    <div class="footer-slab">
+      <div class="footer-bottom">
+        <div class="brand">
+          <span class="brand-name">earthWise</span>
+        </div>
+        <small class="copyright">© 2024 earthWise — All rights reserved.</small>
+      </div>
+    </div>
+  </div>
+
+  <div id="quizModal" class="modal">
+    <div class="modal-content">
+      <h2>Your Sustainability Score</h2>
+      <div class="score-display">
+        <span id="scoreText"></span>
+      </div>
+      <p id="scoreMessage"></p>
+      <button class="close-modal" onclick="closeModal()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      let score = 0;
+      let answered = 0;
+
+      for (let i = 1; i <= 4; i++) {
+        const answer = document.querySelector(`input[name="q${i}"]:checked`);
+        if (answer) {
+          answered++;
+          if (answer.value === 'correct') {
+            score++;
+          }
+        }
+      }
+
+      if (answered < 4) {
+        alert('Please answer all questions before submitting!');
+        return;
+      }
+
+      document.getElementById('scoreText').textContent = `${score} out of 4`;
+      
+      let message = '';
+      if (score === 4) {
+        message = '🌟 Perfect! You\'re a sustainability champion!';
+      } else if (score === 3) {
+        message = '🌱 Great job! You\'re on the right track!';
+      } else if (score === 2) {
+        message = '🌿 Good start! Keep learning about sustainability!';
+      } else {
+        message = '🌍 There\'s always room to grow. Explore more on earthWise!';
+      }
+      
+      document.getElementById('scoreMessage').textContent = message;
+      document.getElementById('quizModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('quizModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+
+</html>

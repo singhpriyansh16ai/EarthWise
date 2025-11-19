@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CLOTHING</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(furniturebackgroundimage.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+            background-color: #fff;
+            border-radius: 40px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .brand {
+            color: #e63946;
+            font-weight: bold;
+            font-size: 18px;
+            background: transparent;
+            height: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        .content {
+            color: rgb(12, 102, 72);
+            font-size: 20px;
+            padding: 0;
+            margin: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info {
+            color: #490c11;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 60px;
+            padding: 30px;
+            width: 90%;
+            margin: auto;
+            justify-content: center;
+            flex-direction: row;
+            background: transparent;
+        }
+
+        .product-card {
+            background: #fafffe;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(213, 17, 76, 0.592);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            object-fit: cover;
+            justify-content: center;
+            width: 25%;
+            border-radius: 20px;
+            animation: enter 3s ease-in;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes enter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(20px);
+            }
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(165, 109, 109, 0.2);
+        }
+
+        .product-card img {
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            height: fit-content;
+            width: 75%;
+            padding: 10px;
+        }
+
+        .product-card:hover img {
+            transform: scale(1);
+        }
+
+        .productinfo {
+            padding: 20px;
+            color: #1abc9c;
+            background: transparent;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-wrapper {
+            background: transparent;
+            width: 90%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 40px;
+            margin: 20px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            object-fit: cover;
+        }
+
+        .image-wrapper a {
+            text-decoration: none;
+        }
+
+        .information {
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .infromation {
+            color: black;
+        }
+
+        .product-type {
+            background-color: #f8f8f8;
+            display: inline-block;
+            font-size: 4rem;
+            color: rgb(0, 0, 0);
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            pointer-events: auto;
+            margin-top: 70px;
+            margin-left: 550px;
+            height: 90px;
+            border-radius: 30px;
+            width: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-link {
+            text-decoration: none;
+            color: black;
+        }
+
+        .sirohi-img {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="product-type">FURNITURE BRANDS</span>
+    </div>
+
+    <div class="gallery">
+        <div class="product-card">
+            <div class="image-wrapper">
+                <a href="https://sirohi.org/pages/journey" class="sirohi-img">
+                    <img src="sirohi logo.jpg" alt="Sirohi Logo">
+                </a>
+            </div>
+            <div class="productinfo">
+                <div class="brand">SIROHI</div>
+                <a href="https://sirohi.org/pages/journey" class="content-link">
+                    <h3 class="content">Sustainability at SIROHI</h3>
+                </a>
+                <p class="infromation">
+                    <bold>Planet & You:</bold> This diverts tons of plastic from landfills.<br>
+                    You own unique, culturally rich furniture and decor that tells a story of empowerment and
+                    environmental responsibility. Sirohi empowers marginalized women artisans to handweave home decor
+                    using upcycled industrial waste (like plastic wrappers) and natural fibers, blending traditional
+                    craft with modern design.
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="image-wrapper">
+                <a href="https://suspire.in/pages/about-suspire">
+                    <img src="Suspire_Logo_wordmark_200x.jpg" alt="Levi's Product">
+                </a>
+            </div>
+            <div class="productinfo">
+                <p class="brand">SUSPIRE</p>
+                <a href="https://suspire.in/pages/about-suspire" class="content-link">
+                    <h3 class="content">Sustainability at Suspire </h3>
+                </a>
+                <p class="infromation">
+                    <bold>Planet & You:</bold> They are a marketplace and brand creating essentials from organic cotton
+                    and recycled fabrics, ensuring zero-waste production and ethical, fair-wage manufacturing for every
+                    garment.This reduces landfill waste and pesticide use. You get skin-friendly, non-toxic clothing
+                    that is durable, timeless, and directly supports a circular fashion economy.
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="image-wrapper">
+                <a
+                    href="https://www.healthierhomes.com/?srsltid=AfmBOorrIAik495VE-Ul8gON_D2fqV098JTOSNh_dIImC1GS5tinJjua">
+                    <img src="healthier homes logo.jpg" alt="Adidas Product">
+                </a>
+            </div>
+            <div class="productinfo">
+                <p class="brand">Healthier Homes </p>
+                <a href="https://www.healthierhomes.com/about" class="content-link">
+                    <h3 class="content">Sustainability at Healthier Homes </h3>
+                </a>
+                <p class="information">
+                    <bold>Planet & You:</bold> Their proprietary line of paints and furniture is rigorously
+                    chemical-free, avoiding VOCs, formaldehyde, and hidden toxins found in standard home products
+                    This prevents chemical pollution in manufacturing. You enjoy a safer home environment with improved
+                    indoor air quality, ideal for families and those with chemical sensitivities.
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

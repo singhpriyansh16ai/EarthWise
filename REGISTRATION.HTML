@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <style>
+        body {
+            background: url("darkbluesky.jpg") center 60%/cover no-repeat;
+            padding-top: 50px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        
+        .registration-container {
+            background: #ffffff;
+            width: 350px;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+
+        .registration-container h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .input-box {
+            margin-bottom: 20px;
+        }
+
+        .input-box label {
+            display: block;
+            margin-bottom: 5px;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .input-box input:focus {
+            border-color: #4e54c8;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .checkbox-container input[type="checkbox"] {
+            width: auto;
+            margin-right: 8px;
+            cursor: pointer;
+        }
+
+        .checkbox-container label {
+            font-size: 13px;
+            color: #444;
+            cursor: pointer;
+        }
+
+        .checkbox-container a {
+            color: #4e54c8;
+            text-decoration: none;
+        }
+
+        .checkbox-container a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4e54c8;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #3c42a6;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #444;
+        }
+
+        .login-link a {
+            color: #4e54c8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Create an Account</h2>
+        <form>
+            <div class="input-box">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter your full name" required />
+            </div>
+
+            <div class="input-box">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" placeholder="Enter your email" required />
+            </div>
+
+            <div class="input-box">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your phone number" required />
+            </div>
+
+            <div class="input-box">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Create a password" required />
+            </div>
+
+            <div class="input-box">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" placeholder="Confirm your password" required />
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="privacy" required />
+                <label for="privacy">I accept the <a href="#">Privacy Policy</a></label>
+            </div>
+
+            <button class="btn" type="submit">Create Account</button>
+
+            <div class="login-link">
+                <p>Already have an account? <a href="SLA LOGIN.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

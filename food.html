@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CLOTHING</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url(top-view-bowl-with-lentils-variety-condiments\ \(1\).jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            text-align: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+            background-color: #fff;
+            border-radius: 40px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .brand {
+            color: #e63946;
+            font-weight: bold;
+            font-size: 18px;
+            background: transparent;
+            height: 30px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        .content {
+            color: rgb(12, 102, 72);
+            font-size: 20px;
+            padding: 0;
+            margin: 10px 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info {
+            color: #490c11;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 70px;
+            padding: 30px;
+            width: 90%;
+            margin: auto;
+            justify-content: center;
+            flex-direction: row;
+            background: transparent;
+        }
+
+        .product-card {
+            background: #fafffe;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(213, 17, 76, 0.592);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            object-fit: cover;
+            justify-content: center;
+            width: 25%;
+            border-radius: 20px;
+            animation: enter 3s ease-in;
+            display: flex;
+            flex-direction: column;
+        }
+
+        @keyframes enter {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(20px);
+            }
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(165, 109, 109, 0.2);
+        }
+
+        .product-card img {
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            height: fit-content;
+            width: 75%;
+            padding: 10px;
+        }
+
+        .product-card:hover img {
+            transform: scale(1);
+        }
+
+        .productinfo {
+            padding: 20px;
+            color: #1abc9c;
+            background: transparent;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-top: 20px;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 350px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .image-wrapper {
+            background: transparent;
+            width: 90%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 40px;
+            margin: 20px 20px 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            object-fit: cover;
+        }
+
+        .image-wrapper a {
+            text-decoration: none;
+        }
+
+        .information {
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .infromation {
+            color: black;
+        }
+
+        .product-type {
+            background-color: #f8f8f8;
+            display: inline-block;
+            font-size: 4rem;
+            color: rgb(0, 0, 0);
+            line-height: 1;
+            padding: 0;
+            margin: 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            pointer-events: auto;
+            margin-top: 70px;
+            margin-left: 550px;
+            height: 90px;
+            border-radius: 30px;
+            width: 900px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .content-link {
+            text-decoration: none;
+            color: black;
+        }
+
+        .sirohi-img {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <span class="product-type">FOOD BRANDS</span>
+    </div>
+
+    <div class="gallery">
+        <div class="product-card">
+            <div class="image-wrapper">
+                <a href="https://adyaorganics.com/?srsltid=AfmBOooEuG6AjP5SlBKeCGbv3N9t4WClCCmsiQNXQ7QBTJPwtGT871kO" class="sirohi-img">
+                    <img src="ADYA ORGANIC.png" alt="Sirohi Logo">
+                </a>
+            </div>
+            <div class="productinfo">
+                <div class="brand">ADYA ORGANIC </div>
+                <a href="https://adyaorganics.com/pages/about-us" class="content-link">
+                    <h3 class="content">Sustainability at  ADYA ORGANIC </h3>
+                </a>
+                <p class="infromation">
+                   They practice traditional "Vedic" farming and empower local women groups, ensuring ethical, chemical-free production.
+
+<br>
+                     <bold>Planet & You:</bold> This restores soil health naturally. You get pure, immunity-boosting A2 dairy and staples that are free from preservatives and adulteration.
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="image-wrapper">
+                <a href="https://suspire.in/pages/about-suspire">
+                    <img src="1527230951-Organic Tattva-Ragi Flour-Logo.jpg" alt="Levi's Product">
+                </a>
+            </div>
+            <div class="productinfo">
+                <p class="brand">ORGANIC TATTVA </p>
+                <a href="https://organictattva.com/pages/about-us" class="content-link">
+                    <h3 class="content">Sustainability at ORGANIC TATTVA </h3>
+                </a>
+                 <p class="infromation">
+                  They maintain strict "farm-to-kitchen" traceability with zero tolerance for GMOs or synthetic pesticides, supporting long-term biodiversity.
+
+<br>
+                     <bold>Planet & You:</bold> This prevents soil degradation. You receive rigorously tested, certified organic groceries that guarantee authentic taste, safety, and high nutritional value.
+                </p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="image-wrapper">
+                <a
+                    href="c:\Users\Priyansh\Downloads\CONCIOUS FOOD LOGO.jpg">
+                    <img src="CONCIOUS FOOD LOGO.jpg" alt="Adidas Product">
+                </a>
+            </div>
+            <div class="productinfo">
+                <p class="brand">CONCIOUS FOOD  </p>
+                <a href="https://www.consciousfood.com/pages/about-us-our-journey" class="content-link">
+                    <h3 class="content">Sustainability at Concious Food </h3>
+                </a>
+                 <p class="infromation">
+                  A pioneer since 1990, they source ethically from small farmers and use solar power and sustainable packaging to minimize their footprint.
+
+
+<br>
+                     <bold>Planet & You:</bold>  This supports fair trade and reduces waste. You enjoy unrefined, "clean label" whole foods that retain maximum nutrients without hidden additives.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
